@@ -13,6 +13,19 @@
 
 const containsDuplicate = (nums) => {
   //write your code here
+  const obj = {} // stores the numbers in an object
+  for (let i = 0; i < nums.length; i++) { //loops through each item length in nums
+    let num = nums[i]; // var to read each number 
+    if (num in obj) { // checks if a number is in the obj
+      obj[num]++; // you add the key "num" and value "keeps
+      // adding the value up by one if there multiple 
+      // copies of the same number" to the object "obj"
+      return true; // if there is more than one "same" number, return true
+    } else {
+      obj[num] = 1; // adds the key "num" and value "1" inside the object
+    }
+  }
+  return false; // if there is only one number, return false
 };
 
 // Export the function for testing
